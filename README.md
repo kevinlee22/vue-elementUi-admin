@@ -37,7 +37,7 @@
 
 
 ## 安装步骤 ##
-	git clone https://github.com/lin-xin/manage-system.git		// 把模板下载到本地
+	git clone https://github.com/kevinlee22/vue2.x-Element-UI-.git		// 把模板下载到本地
 	cd manage-system											// 进入模板目录
 	npm install													// 安装项目依赖，等待安装完成之后
 ## 本地开发 ##
