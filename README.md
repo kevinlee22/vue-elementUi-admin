@@ -15,17 +15,9 @@
 	|           |-- Header.vue           // 公共头部
 	|           |-- Home.vue           	 // 公共路由入口
 	|           |-- Sidebar.vue          // 公共左边栏
-	|		|-- page                   	 // 主要路由页面
-	|           |-- BaseCharts.vue       // 基础图表
-	|           |-- BaseForm.vue         // 基础表单
-	|           |-- BaseTable.vue        // 基础表格
-	|           |-- Login.vue          	 // 登录
-	|           |-- Markdown.vue         // markdown组件
-	|           |-- MixCharts.vue        // 混合图表
-	|           |-- Readme.vue           // 自述组件
-	|           |-- Upload.vue           // 图片上传
-	|           |-- VueEditor.vue        // 富文本编辑器
-	|           |-- VueTable.vue         // vue表格组件
+	|		|-- items                   	 // 主要路由页面
+	|           |-- XXXX.vue       // 侧边栏具体分类对应组件
+	|           
 	|   |-- App.vue                      // 页面入口文件
 	|   |-- main.js                      // 程序入口文件，加载各种公共组件
 	|-- .babelrc                         // ES6语法编译配置
@@ -38,7 +30,7 @@
 
 ## 安装步骤 ##
 	git clone https://github.com/kevinlee22/vue2.x-Element-UI-.git		// 把模板下载到本地
-	cd manage-system											// 进入模板目录
+	cd vue2.x-Element-UI-											// 进入模板目录
 	npm install													// 安装项目依赖，等待安装完成之后
 ## 本地开发 ##
 	// 开启服务器，浏览器访问 http://localhost:8080
