@@ -19,3 +19,8 @@
         }
     }
 </script>
+<style scoped>
+    .wrapper .content {
+        top: 100px;
+    }
+</style>

@@ -1,6 +1,10 @@
 <template>
     <div class="header">
-        <div class="logoimg"></div>
+        <div class="headerInfo">
+            欢迎您：北京乐乐酷科技发展有限公司（广州自我游旗下子公司）
+        </div>
+       <div class="clearfix status">
+            <div class="logoimg"></div>
         <div class="logo">后台管理系统</div>
         <div class="user-info">
             <el-dropdown trigger="click" @command="handleCommand">
@@ -13,6 +17,7 @@
                 </el-dropdown-menu>
             </el-dropdown>
         </div>
+       </div>
     </div>
 </template>
 <script>
@@ -46,11 +51,21 @@
         position: relative;
         box-sizing: border-box;
         width: 100%;
-        height: 70px;
+        height: 100px;
         font-size: 22px;
         line-height: 70px;
         color: #fff;
+    }
+    .status {
         padding-left: 30px;
+    }
+    .headerInfo {
+        width: 100%;
+        height: 30px;
+        background-color: #475669;
+        line-height: 30px;
+        font-size: 15px;
+        color: #99A9BF;
     }
     .header .logoimg{
         float: left;

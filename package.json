@@ -1,8 +1,8 @@
 {
   "name": "manage-system",
   "version": "1.0.0",
-  "description": "基于Vue.js 2.x系列 + element-ui 内容管理系统解决方案",
-  "author": "lin-xin <2981207131@qq.com>",
+  "description": "基于Vue.js 2.x系列 + element-ui 的后台管理系统",
+  "author": "alvin",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -11,10 +11,6 @@
   "dependencies": {
     "element-ui": "^1.2.2",
     "vue": "^2.1.10",
-    "vue-core-image-upload": "^2.0.5",
-    "vue-datasource": "^1.0.4",
-    "vue-echarts-v3": "^1.0.3",
-    "vue-quill-editor": "^1.1.1",
     "vue-resource": "^1.2.1",
     "vue-router": "^2.2.0",
     "vue-simplemde": "^0.3.2"

@@ -61,7 +61,7 @@
         position: absolute;
         width: 220px;
         left: 0;
-        top: 70px;
+        top: 100px;
         bottom:0;
         overflow: auto;
         /*background: #2E363F;*/
