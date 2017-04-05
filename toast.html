@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="apple-touch-fullscreen" content="YES" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="author" content="webkfa.com"/> 
+        <title>html5+css3实现手机toast提示-webkfa.com</title>
+        <style>
+            *{
+            margin:0;padding:0;
+            -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+            -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+            -webkit-tap-highlight-color: rgba(210,210,210,0.35); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+            -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+            }
+            body{font-family:"微软雅黑";font-size:12px;}
+            ul,li{list-style:none;}
+            
+            .toasttj2{z-index:1003;font-size: 1.37em;position: fixed;bottom:25%;width: 100%;opacity:0;height: 24px;display: none;
+            transition: opacity 1s ease-out;
+            }
+            .huati_btn{width:175px;height:32px;background:#34a0f0;border-radius:3px;font:14px/32px "微软雅黑";display:block;overflow:hidden;margin:0 auto;text-align:center;color:#fff;text-decoration:none;}
+            .huati{height:40px;padding-top:9px;border-bottom:1px dashed #cecece}
+        </style>
+    </head>
+
+    <body>
+        <p class="huati"><a href="javascript:test(1);" class="huati_btn">测试一下</a></p>
+        <p class="huati"><a href="javascript:test(2);" class="huati_btn">测试二下</a></p>
+        <div id="toastId2" class="toasttj2" style="display: none; opacity: 0;"></div>
+        <script type="text/javascript">
+            function $S(s){return document.getElementById(s);}
+            function $html(s,html){$S(s).innerHTML=html;}
+            var toastTime2=null;
+            var displayTime2=null;
+            function setToast3(html){
+                if(toastTime2!=null){
+                    clearTimeout(toastTime2);
+                    clearTimeout(displayTime2);
+                }
+                $S('toastId2').style.display='block';
+                $S('toastId2').style.opacity=1;
+                $html('toastId2',html);
+                toastTime2=setTimeout(function(){
+                    $S('toastId2').style.opacity=0;
+                    displayTime2=setTimeout(function(){$S('toastId2').style.display='none';},1000);
+                },1000);
+            }
+            function test(f){
+                if(1==f){
+                    setToast3('<div style="color:#fff;background: rgba(0, 0, 0, 0.6);border-radius: 2px;padding: 2px;text-align: center;width:175px;margin: 0 auto;">话题征集内容不能为空</div>');
+                }else if(2==f){
+                    setToast3('<div style="color:#fff;background: rgba(0, 0, 0, 0.6);border-radius: 2px;padding: 2px;text-align: center;width:235px;margin: 0 auto;">话题征集内容最多输入200个字</div>');
+                }
+            }
+        </script>
+    </body>
+
+</html>

@@ -1,11 +1,12 @@
 <template>
     <div class="header">
         <div class="headerInfo">
-            欢迎您：北京乐乐酷科技发展有限公司（广州自我游旗下子公司）
+            <!-- 欢迎您：北京乐乐酷科技发展有限公司（广州自我游旗下子公司） -->
+            {{lang.welcome}}
         </div>
        <div class="clearfix status">
             <div class="logoimg"></div>
-        <div class="logo">后台管理系统</div>
+        <div class="logo">{{lang.title}}</div>
         <div class="user-info">
             <el-dropdown trigger="click" @command="handleCommand">
                 <span class="el-dropdown-link">
@@ -17,25 +18,43 @@
                 </el-dropdown-menu>
             </el-dropdown>
         </div>
+        <div class="switch">
+            <a @click="switchzh">中文</a>/
+            <a @click="switchen">English</a>
+        </div>
        </div>
     </div>
 </template>
 <script>
+    import langpack from '../../lang/index.js';
     export default {
+        created(){
+            // this.$store.state.language
+            // $store代表的是vuex的实例，
+        },
         data() {
             return {
                 name: 'linxin'
             }
         },
         computed:{
+             lang(){
+                return langpack[this.language]
+            },
             username(){
                 let username = localStorage.getItem('ms_username');
                 return username ? username : this.name;
-            }
+            },
+            language(){
+                return this.$store.state.language;
+            },
         },
         methods:{
-            getItems(){
-                
+            switchzh(){
+                this.$store.commit('switchzh');
+            },
+            switchen(){
+                this.$store.commit('switchen');
             },
             handleCommand(command) {
                 if(command == 'loginout'){
@@ -55,6 +74,19 @@
         font-size: 22px;
         line-height: 70px;
         color: #fff;
+    }
+    .switch {
+        float: right;
+        line-height: 70px;
+        font-size: 22px;
+        padding-right:100px;
+        color: #fff;
+    }
+    .switch>a {
+        cursor: pointer;
+    }
+    .switch>a:hover {
+        color: #58B7FF;
     }
     .status {
         padding-left: 30px;
@@ -76,8 +108,8 @@
         border-radius: 34px;
     }
     .header .logo{
+        padding-left: 30px;
         float: left;
-        width:163px;
         text-align: center;
     }
     .user-info {
